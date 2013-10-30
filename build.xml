@@ -2,7 +2,6 @@
 
 	<property file="build.properties"/>
     <property environment="env"/>
-	
 	<!--
 	<target name="clean">
         <delete dir="GitRetrieve"/>
@@ -14,7 +13,7 @@
 		<mkdir dir="GitRetrieve"/>
 		<git-clone uri="https://github.com/sumitkaw/Sumit-SF-Jenkins.git" dest="GitRetrieve" />
 	</target>
-	-->
+	-->  
 	<target name="testDeploy">
 		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="src" checkOnly="true" runAllTests="true"/>
 	</target>
