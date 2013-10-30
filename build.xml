@@ -1,7 +1,8 @@
 <project default="testDeploy" basedir="." xmlns:sf="antlib:com.salesforce">
 
-<property file="build.properties"/>
+	<property file="build.properties"/>
     <property environment="env"/>
+	
 	<!--
 	<target name="clean">
         <delete dir="GitRetrieve"/>
@@ -15,7 +16,7 @@
 	</target>
 	-->
 	<target name="testDeploy">
-		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="GitRetrieve/${sf.Output}/src" checkOnly="true" runAllTests="true"/>
+		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="src" checkOnly="true" runAllTests="true"/>
 	</target>
 	
 </project>
