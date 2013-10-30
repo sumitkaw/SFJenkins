@@ -6,9 +6,9 @@
 	<target name="clean">
         <delete dir="GitRetrieve"/>
     </target>
-	-->
+	
 	<taskdef resource="org/eclipse/jgit/ant/ant-tasks.properties" />
-	<!--
+
 	<target name="GitRetrieve">
 		<mkdir dir="GitRetrieve"/>
 		<git-clone uri="https://github.com/sumitkaw/Sumit-SF-Jenkins.git" dest="GitRetrieve" />
