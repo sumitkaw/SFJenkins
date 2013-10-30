@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Case assignment</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Case_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New</value>
+            </criteriaItems>
+            <template>unfiled$public/Case_Assigned_To_Queue</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Case_Updated_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Working,Closed</value>
+            </criteriaItems>
+            <template>unfiled$public/Case_Assigned_To_Queue</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>sumikaw2100@gmail.com</assignedTo>
+            <assignedToType>User</assignedToType>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Escalated</value>
+            </criteriaItems>
+            <template>unfiled$public/Case_Assigned_To_Queue</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

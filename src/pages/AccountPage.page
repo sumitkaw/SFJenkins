@@ -1,0 +1,41 @@
+<apex:page controller="ActionVar" tabStyle="Account">
+ <apex:form >
+ <apex:variable var="acc" value="{!lAcccount}" />
+ <apex:PageBlock title="Account information">
+ <apex:PageBlockSection collapsible="false" title="AccountList" >
+ <apex:outputLabel value="Account List"></apex:outputLabel>
+ <apex:selectList value="{!AccountId}" size="1" >
+ <apex:selectOptions value="{!accountList}" />
+ <apex:actionSupport action="{!getDetails}" event="onchange" status="StatusCheck" rerender="DetailBlock" />
+ </apex:selectList>
+ <apex:actionStatus startText=" (Working...)" stopText="Completed" id="StatusCheck"/>
+ </apex:PageBlockSection>
+ <apex:PageBlockSection id="DetailBlock" title="Account Details">
+ <apex:PageBlockSectionItem rendered="{!showDetail}" >
+ <apex:outputLabel value="AccountName"/>
+ <apex:outputLabel value="{!acc.Name}"/>
+ </apex:PageBlockSectionItem>
+ 
+ <apex:PageBlockSectionItem rendered="{!showDetail}" >
+ <apex:outputLabel value="AccountNumber"/>
+ <apex:outputLabel value="{!acc.AccountNumber}"/>
+ </apex:PageBlockSectionItem>
+ 
+ <apex:PageBlockSectionItem rendered="{!showDetail}" >
+ <apex:outputLabel value="Industry"/>
+ <apex:outputLabel value="{!acc.Industry}"/>
+ </apex:PageBlockSectionItem>
+ 
+ <apex:PageBlockSectionItem rendered="{!showDetail}" >
+  <apex:outputLabel value="Website"/>
+ <apex:outputLabel value="{!acc.Website}"/>
+ </apex:PageBlockSectionItem>
+ 
+ <apex:PageBlockSectionItem rendered="{!showDetail}" >
+  <apex:outputLabel value="Active"/>
+ <apex:outputLabel value="{!acc.Active__c}"/>
+ </apex:PageBlockSectionItem>
+ </apex:PageBlockSection>
+ </apex:PageBlock>
+ </apex:form>
+</apex:page>

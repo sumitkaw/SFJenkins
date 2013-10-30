@@ -1,0 +1,15 @@
+Dear {!Contact.FirstName},
+
+Your case is Registered with out Support Staff.
+Case : {!Case.CaseNumber}
+
+{!Case.Solution_Description}
+
+Thank you,
+
+{!User.Name}
+{!Organization.Name}
+
+Your comment:
+
+{!Case.Description}

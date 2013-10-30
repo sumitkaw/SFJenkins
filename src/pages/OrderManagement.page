@@ -1,0 +1,8 @@
+<apex:page standardController="Opportunity" >
+
+
+<div id="OrderDiv"> 
+    <apex:canvasApp border="5" containerId="OrderDiv" developerName="Order_Management"  scrolling="true" parameters="{'Opportunity_Id':'{!opportunity.Id}','Oportunity_Name':'opportunity.Name','OperationType':'Create'}"/>
+</div>
+
+</apex:page>

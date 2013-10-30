@@ -1,0 +1,9 @@
+Hi,
+
+Case {!Case.CaseNumber}  has been updated with new Comment.
+
+Please click on the url to access the case in salesforce.
+{!Case.Link}
+
+Regards
+Sumit Service Org

@@ -1,0 +1,9 @@
+Hi,
+
+Please find the details of the Case assigned to your Queue.
+
+Case Number - {!Case.CaseNumber}
+Case URL - {!Case.Link}
+
+Regards
+Sumit Support Org

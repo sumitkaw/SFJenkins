@@ -1,0 +1,21 @@
+<project default="clean" basedir="." xmlns:sf="antlib:com.salesforce">
+
+<property file="build.properties"/>
+    <property environment="env"/>
+
+	<target name="clean">
+        <delete dir="GitRetrieve"/>
+    </target>
+	
+	<taskdef resource="org/eclipse/jgit/ant/ant-tasks.properties" />
+
+	<target name="GitRetrieve">
+		<mkdir dir="GitRetrieve"/>
+		<git-clone uri="https://github.com/sumitkaw/Sumit-SF-Jenkins.git" dest="GitRetrieve" />
+	</target>
+	
+	<target name="testDeploy">
+		<sf:deploy username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="GitRetrieve/${sf.Output}/src" checkOnly="true" runAllTests="true"/>
+	</target>
+	
+</project>
